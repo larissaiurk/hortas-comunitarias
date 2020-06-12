@@ -1,2 +1,0 @@
-# hortas-comunitarias
-hortas-comunitarias

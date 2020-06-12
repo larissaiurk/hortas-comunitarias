@@ -20,20 +20,13 @@
   margin-top: 100px;
 }
 
+.form input {
+  background-color: #fff;
+}
+
 .login-container section.form form h1{
   font-size: 32px;
   margin-bottom: 32px;
-}
-
-.login-container section.form form a{
-  display: flex;
-  align-items: center;
-  margin-top: 40px;
-  color: #41414d;
-  font-size: 18px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: opactity 0.2s;
 }
 
 .login-container section.form form a svg{
