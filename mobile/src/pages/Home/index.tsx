@@ -30,8 +30,8 @@ const Home = () => {
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
           <View>
-            <Text style={styles.title}>Seu marketplace de coleta de resíduos</Text>
-            <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente</Text>
+            <Text style={styles.title}>Seu marketplace de hortas urbanas.</Text>
+            <Text style={styles.description}>Ajudamos pessoas a localizarem hortas urbanas comunitárias pela cidade de forma eficiente.</Text>
           </View>
         </View>
 
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 32,
-    backgroundColor: '#f0f0f5',
+    backgroundColor: '#FCF7EE',
   },
 
   main: {
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    color: '#322153',
+    color: '#AF2708',
     fontSize: 32,
     fontFamily: 'Ubuntu_700Bold',
     maxWidth: 260,
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   },
 
   description: {
-    color: '#6C6C80',
+    color: '#CC4729',
     fontSize: 16,
     marginTop: 16,
     fontFamily: 'Roboto_400Regular',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   },
 
   button: {
-    backgroundColor: '#34CB79',
+    backgroundColor: '#AF2708',
     height: 60,
     flexDirection: 'row',
     borderRadius: 10,

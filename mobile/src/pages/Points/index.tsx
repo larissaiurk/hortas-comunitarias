@@ -96,10 +96,10 @@ const Points = () => {
     <>
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigateBack}>
-          <Icon name="arrow-left" size={20} color="#34cb79" />
+          <Icon name="arrow-left" size={20} color="#AF2708" />
         </TouchableOpacity>
         <Text style={styles.title}>Bem vindo.</Text>
-        <Text style={styles.description}>Encontre no mapa um ponto de coleta.</Text>
+        <Text style={styles.description}>Encontre no mapa uma horta comunitária.</Text>
 
         <View style={styles.mapContainer}>
           { initialPosition[0] !== 0 && (
@@ -166,16 +166,18 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 32,
     paddingTop: 20 + Constants.statusBarHeight,
+    backgroundColor: '#fff',
   },
 
   title: {
+    color: '#AF2708',
     fontSize: 20,
     fontFamily: 'Ubuntu_700Bold',
     marginTop: 24,
   },
 
   description: {
-    color: '#6C6C80',
+    color: '#CC4729',
     fontSize: 16,
     marginTop: 4,
     fontFamily: 'Roboto_400Regular',
@@ -202,7 +204,7 @@ const styles = StyleSheet.create({
   mapMarkerContainer: {
     width: 90,
     height: 70,
-    backgroundColor: '#34CB79',
+    backgroundColor: '#AF2708',
     flexDirection: 'column',
     borderRadius: 8,
     overflow: 'hidden',
@@ -230,9 +232,9 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    backgroundColor: '#fff',
+    backgroundColor: '#fff4f4',
     borderWidth: 2,
-    borderColor: '#eee',
+    borderColor: '#fdfdfd',
     height: 120,
     width: 120,
     borderRadius: 8,
@@ -247,7 +249,7 @@ const styles = StyleSheet.create({
   },
 
   selectedItem: {
-    borderColor: '#34CB79',
+    borderColor: '#AF2708',
     borderWidth: 2,
   },
 
