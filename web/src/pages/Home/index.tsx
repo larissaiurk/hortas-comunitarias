@@ -11,17 +11,17 @@ const Home = () => {
     <div id="page-home">
       <div className="content">
         <header>
-          <img src={logo} alt="Ecoleta"/>
+          <img src={logo} alt="Hortas Comunitárias"/>
         </header>
         <main>
           <h1>Seu marketplace de hortas urbanas.</h1>
-          <p>Ajudamos pessoas a encontrarem hortas urbanas comunitárias de forma eficiente</p>
+          <p>Ajudamos pessoas a localizarem hortas urbanas comunitárias pela cidade de forma eficiente.</p>
 
-          <Link to="/login">
+          <Link to="/create-points">
             <span>
               <FiLogIn />
             </span>
-            <strong>Venha fazer parte disso!</strong>
+            <strong>Cadastre sua horta!</strong>
           </Link>
 
         </main>

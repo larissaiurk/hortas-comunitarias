@@ -79,7 +79,7 @@
 }
 
 #page-home .content main a:hover {
-  background: #e04724;
+  background: var(--hover);
 }
 
 @media(max-width: 900px) { 

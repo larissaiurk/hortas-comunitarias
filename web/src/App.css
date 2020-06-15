@@ -2,6 +2,7 @@
   --primary-color: #AF2708;
   --title-color: #AF2708;
   --text-color: #CC4729;
+  --hover: #e04724;
 }
 
 * {
@@ -56,6 +57,10 @@ form textarea {
 ::placeholder {
   color: #701000;
   opacity: 1; /* Firefox */
+}
+
+header img{
+  width: 200px;
 }
 
 .button {

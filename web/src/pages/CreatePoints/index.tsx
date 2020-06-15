@@ -4,8 +4,9 @@ import { FiArrowLeft } from 'react-icons/fi';
 import axios from 'axios';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
-
 import api from '../../services/api';
+
+import Dropzone from '../../components/Dropzone';
 
 import './styles.css';
 
@@ -30,7 +31,6 @@ const CreatePoints = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] =useState<string[]>([]);
-
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0]);
 
   const [formData, setFormData] = useState({
@@ -43,6 +43,7 @@ const CreatePoints = () => {
   const [selectedCity, setSelectedCity] = useState('0');
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0]);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [selectedFile, setSelectedFile] = useState<File>();
   
   const history = useHistory();
 
@@ -114,22 +115,27 @@ const CreatePoints = () => {
 
   async function handleSubmit(event: FormEvent ){
     event.preventDefault();
+
     const { name, email, whatsapp } = formData;
     const uf = selectedUf;
     const city = selectedCity;
     const [latitude, longitude] = selectedPosition;
     const items = selectedItems;
 
-    const data = {
-      name,
-      email,
-      whatsapp,
-      uf,
-      city,
-      latitude,
-      longitude, 
-      items
-    };
+    const data = new FormData();
+
+    data.append('name', name);
+    data.append('email', email);
+    data.append('whatsapp', whatsapp);
+    data.append('uf', uf);
+    data.append('city', city);
+    data.append('latitude', String(latitude));
+    data.append('longitude',  String(longitude));
+    data.append('items', items.join(','));
+    
+    if(selectedFile) {
+      data.append('image', selectedFile);
+    }
 
     await api.post('points', data);
     alert('ponto de coleta criado');
@@ -140,7 +146,7 @@ const CreatePoints = () => {
   return (
     <div id="page-create-point">
       <header>
-        <img src={Logo} alt="Ecoleta"/>
+        <img src={Logo} alt="Hortas Comunitárias"/>
         <Link to="/"> 
           <FiArrowLeft></FiArrowLeft>
           Voltar para home
@@ -148,21 +154,33 @@ const CreatePoints = () => {
       </header>
 
       <form onSubmit={handleSubmit}>
-        <h1>Cadastro do <br /> ponto de coleta</h1>
+        <h1>Cadastro da <br /> horta comunitária</h1>
+
+        <Dropzone onFileUploaded={setSelectedFile}></Dropzone>
+
         <fieldset>
           <legend>
             <h2>Dados</h2>
           </legend>
 
           <div className="field">
-            <label htmlFor="name">Nome da entidade</label>
+            <label htmlFor="name">Nome da horta</label>
             <input 
               type="text"
               name="name"
               id="name"
               onChange={handleInputChange}
             />
-          </div>
+          </div>      
+          <div className="field">
+            <label htmlFor="nameUser">Nome responsável pela horta</label>
+            <input 
+              type="text"
+              name="nameUser"
+              id="nameUser"
+              onChange={handleInputChange}
+            />
+          </div>                
           <div className="field-group">
             <div className="field">
               <label htmlFor="email">E-mail</label>
@@ -189,7 +207,7 @@ const CreatePoints = () => {
 
         <fieldset>
           <legend>
-            <h2>Endereço</h2>
+            <h2>Endereço da horta</h2>
             <span>Selecione o endereço no mapa</span>
           </legend>
 
@@ -237,7 +255,7 @@ const CreatePoints = () => {
 
         <fieldset>
           <legend>
-            <h2>Ítens de coleta</h2>
+            <h2>Produtos disponíveis <br /> na horta</h2>
             <span>Selecione um ou mais ítens abaixo</span>
           </legend>
 
@@ -255,7 +273,7 @@ const CreatePoints = () => {
           </ul>
         </fieldset>  
 
-        <button type="submit">Cadastrar ponto de coleta</button>              
+        <button type="submit">Cadastrar horta</button>              
       </form>
     </div>
   );
