@@ -145,7 +145,7 @@
   margin-bottom: 24px;
 }
 
-#page-create-point form button {
+#page-create-point form .button-submit {
   width: 260px;
   height: 56px;
   background: var(--primary-color);
@@ -160,8 +160,53 @@
   cursor: pointer;
 }
 
-#page-create-point form button:hover {
+#page-create-point form .button-submit:hover {
   background: var(--hover);
+}
+
+.items-category {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.items-category li button{
+  width: 115px;
+  height: 32px;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  align-self: flex-end;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.items-category li button:hover {
+  filter: brightness(90%);
+}
+
+.items-category .fruta{
+  background: #ED730B;
+}
+
+.items-category .legume {
+  background: #59A780;
+}
+
+.items-category .verdura {
+  background: #CC4729;
+}
+
+.items-category .outros {
+  background: #25596E;
+}
+
+.items-category .selected {
+  background: #fff;
+  border: 2px solid var(--hover);
+  color: var(--title-color);
 }
 
 .items-grid {
@@ -169,6 +214,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   list-style: none;
+  min-height: 376px;
 }
 
 .items-grid li {

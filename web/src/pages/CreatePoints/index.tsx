@@ -12,10 +12,16 @@ import './styles.css';
 
 import Logo from '../../assets/logo.png';
 
+interface Category {
+  id: number;
+  title: string;
+}
+
 interface Item {
   id: number;
   title: string;
   image_url: string;
+  category: number;
 }
 
 interface IBGEUFResponse {
@@ -28,6 +34,7 @@ interface IBGECityResponse {
 
 
 const CreatePoints = () => {
+  const [category, setCategory] = useState<Category[]>([]);
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] =useState<string[]>([]);
@@ -43,7 +50,10 @@ const CreatePoints = () => {
   const [selectedCity, setSelectedCity] = useState('0');
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0]);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<number[]>([]);
   const [selectedFile, setSelectedFile] = useState<File>();
+
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   
   const history = useHistory();
 
@@ -54,6 +64,12 @@ const CreatePoints = () => {
       setInitialPosition([latitude, longitude]);
     })
   }, [])
+
+  useEffect(() => {
+    api.get('categories').then(response => {
+      setCategory(response.data);
+    })
+  }, []);  
 
   useEffect(() => {
     api.get('items').then(response => {
@@ -80,6 +96,13 @@ const CreatePoints = () => {
       })    
 
   }, [selectedUf]);
+
+  useEffect(() => {
+    const filter = items.filter(item => {
+      return selectedCategories.includes(item.category)
+    })
+    setFilteredItems(filter);
+  }, [items, selectedCategories])
 
   function handleSelectedUf(event: ChangeEvent<HTMLSelectElement>) {
     const uf = event.target.value;
@@ -113,6 +136,16 @@ const CreatePoints = () => {
     }
   }
 
+  function handleSelectedCategories(id: number) {
+    const alreadySelected = selectedCategories.findIndex(item => item === id);
+    if(alreadySelected >= 0) {
+      const filteredItems = selectedCategories.filter(item => item !== id);
+      setSelectedCategories(filteredItems);
+    } else {
+      setSelectedCategories([...selectedCategories, id]);
+    }
+  }  
+
   async function handleSubmit(event: FormEvent ){
     event.preventDefault();
 
@@ -141,6 +174,29 @@ const CreatePoints = () => {
     alert('Horta Cadastrada com Sucesso!!');
 
     history.push('/');
+  }
+
+  function getClassCategory(id: number) {
+    const isSelected = selectedCategories.includes(id) ? 'selected' : ''
+    let classColor = '';
+    switch (id) {
+      case 1:
+        classColor = 'fruta';
+        break;
+      case 2:
+        classColor = 'verdura';
+        break;
+      case 3:
+        classColor = 'legume';
+        break;
+      case 4:
+        classColor = 'outros';
+        break;                              
+      default:
+        break;
+    }
+
+    return `${isSelected} ${classColor}`
   }
 
   return (
@@ -259,8 +315,20 @@ const CreatePoints = () => {
             <span>Selecione um ou mais ítens abaixo</span>
           </legend>
 
+          <ul className="items-category">
+            {category.map(item => (
+              <li 
+                key={item.id} 
+                onClick={() => {handleSelectedCategories(item.id)}}
+              >
+                <button className={getClassCategory(item.id)}>{item.title}</button>
+              </li>
+            ))}
+          </ul>          
+
           <ul className="items-grid">
-            {items.map(item => (
+          { selectedCategories.length > 0
+            ? filteredItems.map(item => (
               <li 
                 key={item.id} 
                 onClick={() => handleSelectedItem(item.id)}
@@ -269,11 +337,22 @@ const CreatePoints = () => {
                 <img src={item.image_url} alt={item.title}/>
                 <span>{item.title}</span>
               </li>
-            ))}
+            ))
+            : items.map(item => (
+              <li 
+                key={item.id} 
+                onClick={() => handleSelectedItem(item.id)}
+                className={selectedItems.includes(item.id) ? 'selected' : ''}
+              >
+                <img src={item.image_url} alt={item.title}/>
+                <span>{item.title}</span>
+              </li>
+            ))
+          }            
           </ul>
         </fieldset>  
 
-        <button type="submit">Cadastrar horta</button>              
+        <button className="button-submit" type="submit">Cadastrar horta</button>              
       </form>
     </div>
   );

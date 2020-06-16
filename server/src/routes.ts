@@ -7,12 +7,16 @@ import multerConfig from './config/multer';
 
 import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/ItemsController';
+import CategoriesController from './controllers/CategoriesController';
 
 const routes = express.Router();
 const upload = multer(multerConfig);
 
 const pointsController = new PointsController();
 const itemsController = new ItemsController();
+const categoriesController = new CategoriesController();
+
+routes.get('/categories', categoriesController.index);
 
 routes.get('/items', itemsController.index);
 

@@ -12,6 +12,7 @@ class ItemsController {
         id: item.id,
         image_url: `${process.env.SERVER_ENDPOINT}/uploads/items/${item.image}`,
         title: item.title, 
+        category: item.category_id,
       }
     });
   

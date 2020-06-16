@@ -5,6 +5,10 @@ export async function up(knex: Knex) {
     table.increments('id').primary();
     table.string('image').notNullable();
     table.string('title').notNullable();
+    table.integer('category_id')
+      .notNullable()
+      .references('id')
+      .inTable('items_category');    
   });
 };
 
