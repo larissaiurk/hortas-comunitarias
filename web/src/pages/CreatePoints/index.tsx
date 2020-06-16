@@ -138,7 +138,7 @@ const CreatePoints = () => {
     }
 
     await api.post('points', data);
-    alert('ponto de coleta criado');
+    alert('Horta Cadastrada com Sucesso!!');
 
     history.push('/');
   }
