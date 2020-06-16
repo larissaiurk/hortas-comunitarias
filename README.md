@@ -36,11 +36,11 @@ O projeto Hortas Urbanas Comunitárias surgiu durante as aulas na minha faculdad
 
 Vitrine da horta
 
-## Layout
+<!-- ## Layout
 
 Disponível no [Figma](https://www.figma.com/file/CluutxBPC1ytTP2RPDmTne/HORTAS-COMUNIT%C3%81RIAS-DE-CURITIBA?node-id=10%3A2)
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCluutxBPC1ytTP2RPDmTne%2FHORTAS-COMUNIT%25C3%2581RIAS-DE-CURITIBA%3Fnode-id%3D10%253A2&chrome=DOCUMENTATION" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCluutxBPC1ytTP2RPDmTne%2FHORTAS-COMUNIT%25C3%2581RIAS-DE-CURITIBA%3Fnode-id%3D10%253A2&chrome=DOCUMENTATION" allowfullscreen></iframe> -->
 
 ## Pacote de ícones
 
