@@ -156,7 +156,7 @@ const Points = () => {
               onPress={() => handleSelectItem(item.id)}
               activeOpacity={0.6}
             >
-              <SvgUri width={42} height={42} uri={item.image_url} />
+            <Image style={styles.itemImage} source={{ uri: item.image_url }} />
               <Text style={styles.itemTitle}>{item.title}</Text>
             </TouchableOpacity>                                       
           ))}
@@ -221,6 +221,12 @@ const styles = StyleSheet.create({
     height: 45,
     resizeMode: 'cover',
   },
+
+  itemImage: {
+    width: 64,
+    height: 60,
+    resizeMode: 'cover',
+  },  
 
   mapMarkerTitle: {
     flex: 1,
