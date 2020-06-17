@@ -42,6 +42,7 @@ const CreatePoints = () => {
 
   const [formData, setFormData] = useState({
     name: '',
+    responsibleName: '',
     email: '',
     whatsapp: '',
   });
@@ -149,7 +150,7 @@ const CreatePoints = () => {
   async function handleSubmit(event: FormEvent ){
     event.preventDefault();
 
-    const { name, email, whatsapp } = formData;
+    const { name, responsibleName, email, whatsapp } = formData;
     const uf = selectedUf;
     const city = selectedCity;
     const [latitude, longitude] = selectedPosition;
@@ -158,6 +159,7 @@ const CreatePoints = () => {
     const data = new FormData();
 
     data.append('name', name);
+    data.append('responsibleName', responsibleName);
     data.append('email', email);
     data.append('whatsapp', whatsapp);
     data.append('uf', uf);
@@ -229,11 +231,11 @@ const CreatePoints = () => {
             />
           </div>      
           <div className="field">
-            <label htmlFor="nameUser">Nome responsável pela horta</label>
+            <label htmlFor="responsibleName">Nome responsável pela horta</label>
             <input 
               type="text"
-              name="nameUser"
-              id="nameUser"
+              name="responsibleName"
+              id="responsibleName"
               onChange={handleInputChange}
             />
           </div>                

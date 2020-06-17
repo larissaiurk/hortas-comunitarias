@@ -15,8 +15,9 @@ interface Data {
     id: number,
     image: string;
     name: string;
+    responsibleName: string;
     email: string;
-    whatsapp: string;
+    whatsapp: number;
     latitude: number;
     longitude: number;
     city: string;
@@ -79,6 +80,11 @@ const Detail = () => {
             <Text style={styles.addressTitle}>Endereço</Text>
             <Text style={styles.addressContent}>{dataResponse.serializedPoint.city}, {dataResponse.serializedPoint.uf}</Text>
           </View>
+
+          <View style={styles.address}>
+            <Text style={styles.addressTitle}>Responsável pela horta</Text>
+            <Text style={styles.addressContent}>{dataResponse.serializedPoint.responsibleName}</Text>
+          </View>          
         </View>
         <View style={styles.footer}>
           <RectButton style={styles.button} onPress={handleWhatsapp}>

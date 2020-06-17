@@ -29,6 +29,7 @@ routes.post(
   celebrate ({
     body: Joi.object().keys({
       name: Joi.string().required(),
+      responsibleName: Joi.string().required(),
       email: Joi.string().required().email(),
       whatsapp: Joi.number().required(),
       latitude: Joi.number().required(),
