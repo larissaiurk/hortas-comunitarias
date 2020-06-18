@@ -1,8 +1,12 @@
 import React , { useEffect, useState } from 'react';
 import { Link , useHistory, useParams } from 'react-router-dom';
-import { MdLocalFlorist, MdLocationOn, MdStar, MdMoreHoriz } from 'react-icons/md';
 import { FiArrowLeft, FiEdit } from 'react-icons/fi';
 import api from '../../services/api';
+
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
+
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import './styles.css';
 
@@ -33,6 +37,21 @@ interface Point{
 
 const Point = () => {
 
+  const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+      root: {
+        display: 'flex',
+        position: 'relative',
+        left: '50%',
+        top: '100px',
+        width: '100%',
+        color: red[800],
+        marginTop: '50px',
+      },
+    }),
+  );  
+  
+  const classes = useStyles();
   const history = useHistory();
   let { id } = useParams();
 
@@ -41,7 +60,6 @@ const Point = () => {
   useEffect(() => {
     api.get(`points/${id}`).then(response => {
       setPoint(response.data)
-      console.log(response.data, point);
     })
   }, []); 
 
@@ -138,7 +156,9 @@ const Point = () => {
           </div>
         </div>
       ) : (
-        <h1>Oi</h1>
+        <div className={classes.root}>
+          <CircularProgress color="inherit"/>
+        </div>
       )
       }
     </div>
