@@ -24,8 +24,11 @@ interface Data {
     uf: string;
     image_url: string;
   };
-  items: {
+  serializedItems: {
+    id: number;
     title: string;
+    image_url: string;
+    category: number; 
   }[];
 }
 
@@ -73,7 +76,7 @@ const Detail = () => {
         
           <Text style={styles.pointName}>{dataResponse.serializedPoint.name}</Text>
           <Text style={styles.pointItems}>
-            {dataResponse.items.map(item => item.title).join(', ')}
+            {dataResponse.serializedItems.map(item => item.title).join(', ')}
           </Text>
   
           <View style={styles.address}>

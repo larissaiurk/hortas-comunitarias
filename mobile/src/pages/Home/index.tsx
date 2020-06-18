@@ -22,10 +22,8 @@ const Home = () => {
       style={{ flex: 1}}
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
-      <ImageBackground 
-        source={require('../../assets/home-background.png')} 
+      <View 
         style={styles.container}
-        imageStyle={{ width: 274, height: 368}}
       >
         <View style={styles.main}>
           <Image source={require('../../assets/logo.png')} />
@@ -63,7 +61,7 @@ const Home = () => {
             </Text>
           </RectButton>
         </View>
-      </ImageBackground>
+      </View>
     </KeyboardAvoidingView>
   );
 };
