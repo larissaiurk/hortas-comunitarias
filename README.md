@@ -3,16 +3,16 @@
 </h1>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/larissaiurk/rocketseat-next-level-week-1?color=%23a100ff">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/larissaiurk/hortas-comunitarias?color=%23a100ff">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/larissaiurk/rocketseat-next-level-week-1">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/larissaiurk/hortas-comunitarias">
 	
   <a href="https://www.linkedin.com/in/larissaiurk/">
     <img alt="Made by Lariiurk" src="https://img.shields.io/static/v1?label=made%20by&message=Lariiurk&color=ff69b4">
   </a>
 
-  <a href="https://github.com/larissaiurk/rocketseat-next-level-week-1/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/larissaiurk/rocketseat-next-level-week-1">
+  <a href="https://github.com/larissaiurk/hortas-comunitarias/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/larissaiurk/hortas-comunitarias">
   </a>
 
   <a href="https://github.com/larissaiurk/">
@@ -20,7 +20,7 @@
   </a>  
 </p>
 <p align="center">
-<!-- <a href="https://insomnia.rest/run/?label=Ecoleta%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Flarissaiurk%2Frocketseat-next-level-week-1%2Fmaster%2Fserver%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a> -->
+<!-- <a href="https://insomnia.rest/run/?label=Ecoleta%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Flarissaiurk%2Fhortas-comunitarias%2Fmaster%2Fserver%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a> -->
 </p>
 
 <h1 align="center">PLATAFORMA VIRTUAL PARA HORTAS COMUNITÁRIAS EM CURITIBA</h1>
@@ -34,18 +34,19 @@ O projeto Hortas Urbanas Comunitárias surgiu durante as aulas na minha faculdad
 
 ## 💡 Qual parte do projeto será desenvolvida?
 
-Vitrine da horta
+Queremos mapear as hortas comunitárias da cidade da Curitiba, com esse cadastro poderemos visualizar os produtos que a horta produz, sua localização e disponibilizar contato por whatsapp e e-mail. Queremos dar mais visibilidades para elas no primeiro momento.
 
 
 ## :rocket: Tecnologias
 
-O projeto utilizou as seguintes tecnologias:
+O projeto utilizou:
 
 - [Node.js][nodejs]
 - [TypeScript][typescript]
 - [React][reactjs]
 - [React Native][rn]
 - [Expo][expo]
+- [Knex][knex] para migrações
 
 ## :information_source: Como usar esse repositório
 
@@ -59,10 +60,10 @@ No seu terminal:
 
 ```bash
 # Clonar o repo
-$ git clone https://github.com/larissaiurk/rocketseat-next-level-week-1
+$ git clone https://github.com/larissaiurk/hortas-comunitarias
 
 # Entrar no repo
-$ cd rocketseat-next-level-week-1/server
+$ cd hortas-comunitarias/server
 
 # Instalar dependências
 $ npm install
@@ -85,10 +86,10 @@ $ npm run dev
 
 ```bash
 # Clonar o repo
-$ git clone https://github.com/larissaiurk/rocketseat-next-level-week-1
+$ git clone https://github.com/larissaiurk/hortas-comunitarias
 
 # Entrar no repo
-$ cd rocketseat-next-level-week-1/web
+$ cd hortas-comunitarias/web
 
 # Instalar dependências
 $ npm install
@@ -102,10 +103,10 @@ $ npm start
 
 ```bash
 # Clonar o repo
-$ git clone https://github.com/larissaiurk/rocketseat-next-level-week-1
+$ git clone https://github.com/larissaiurk/hortas-comunitarias
 
 # Entrar no repo
-$ cd rocketseat-next-level-week-1/mobile
+$ cd hortas-comunitarias/mobile
 
 # Instalar dependências
 $ npm install
@@ -120,11 +121,9 @@ $ expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
 
 ```
 
-<!-- ## Layout
+## Próximos passos do projeto
 
-Disponível no [Figma](https://www.figma.com/file/CluutxBPC1ytTP2RPDmTne/HORTAS-COMUNIT%C3%81RIAS-DE-CURITIBA?node-id=10%3A2)
-
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCluutxBPC1ytTP2RPDmTne%2FHORTAS-COMUNIT%25C3%2581RIAS-DE-CURITIBA%3Fnode-id%3D10%253A2&chrome=DOCUMENTATION" allowfullscreen></iframe> -->
+- [ ] Adicionar autenticação - criar cadastro de usuário
 
 ## Pacote de ícones
 
@@ -147,3 +146,5 @@ Feito com ❤️ por Larissa Iurk
 [expo]: https://expo.io/
 [reactjs]: https://reactjs.org
 [rn]: https://facebook.github.io/react-native/
+[knex]: http://knexjs.org/
+[materialui]: https://material-ui.com/pt/
