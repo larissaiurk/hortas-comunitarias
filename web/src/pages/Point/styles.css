@@ -1,0 +1,148 @@
+#point{
+  width: 100%;
+  height: 100%;
+  max-width: 1100px;
+  margin: 0 auto;  
+}
+
+#point header {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#point header a {
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#point header a svg {
+  margin-right: 16px;
+  color: var(--primary-color);
+}
+
+#point .grid{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+#point .grid .grid-item{
+  padding: 40px 60px;
+}
+
+#point .grid {
+  -webkit-box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.95);
+  -moz-box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.95);
+  box-shadow: 0px 0px 15px -12px rgba(0,0,0,0.95);
+}
+
+#point .grid img{
+  max-width: 320px;
+  border-radius: 10%;
+  margin: 30px 0;
+}
+
+#point .grid ul{
+  margin-bottom: 20px;
+}
+
+#point .grid ul li{
+  display: flex;
+  max-width: 320px;
+  line-height: 30px;
+}
+
+#point .grid ul li h3{
+  width: 100px;
+}
+
+#point .grid ul li span{
+  margin-left: 40px;
+  font-size: 14px;
+}
+
+#point .button-delete, #point .button-update{
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 12px;
+  border: 0;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  line-height: 40px;
+}
+
+#point .button{
+  background: var(--hover);
+}
+
+#point .button-delete{
+  width: 120px;
+  height: 36px;
+  background: #E86244;
+}
+
+#point .button-update{
+  width: 180px;
+  height: 36px;
+  background: var(--primary-color);
+  margin-left: 10px;
+}
+
+
+#point  .grid  .items-point {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-gap: 16px; */
+  /* gap: 16px; */
+  list-style: none;
+  max-width: 540px;
+  min-height: 376px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin-top: 40px;
+}
+
+#point .grid .items-point li img {
+  width: 65px;
+  height: 65px;
+  position: relative;
+  top: -10px;
+}
+
+#point .grid  .items-point li {
+  background: #fdf5e9e3;
+  border: 2px solid #fdfdfd;
+  height: 140px;
+  width: 140px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#point .grid  .items-point li span {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: var(--title-color);
+  margin: 0 auto;
+  position: relative;
+  top: -30px;
+}
+

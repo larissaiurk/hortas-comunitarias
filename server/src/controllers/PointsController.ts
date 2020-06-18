@@ -44,9 +44,18 @@ class PointsController {
     const items = await knex('items')
       .join('point_items', 'items.id', '=', 'point_items.item_id')
       .where('point_items.point_id', id)
-      .select('items.title');
+      .select('items.*');
 
-    return response.json({ serializedPoint, items })
+    const serializedItems = items.map(item => {
+      return {
+        id: item.id,
+        image_url: `${process.env.SERVER_ENDPOINT}/uploads/items/${item.image}`,
+        title: item.title, 
+        category: item.category_id,
+      }
+    })     
+
+    return response.json({ serializedPoint, serializedItems })
   }
 
   async create (request: Request, response: Response) {
@@ -99,6 +108,24 @@ class PointsController {
       ...point
     });
   } 
+
+  async update(request: Request, response: Response) {
+    const { id } = request.params;
+    const { name, responsibleName, email, whatsapp } = request.body;
+    knex('points')
+      .where({id}) 
+      .update({ name, responsibleName, email, whatsapp })
+      .then(u => response.status(!!u?200:404).json({success:!!u}))
+      .catch(e => response.status(500).json(e));
+  }  
+
+  async delete(request: Request, response: Response) {
+    const { id } = request.params;
+    
+    await knex('points').where('id', id).delete();
+
+    return response.status(204).send();    
+  }   
 }
 
 export default PointsController;

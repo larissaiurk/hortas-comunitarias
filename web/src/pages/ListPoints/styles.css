@@ -1,0 +1,191 @@
+#page-list-point {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+#page-list-point header {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-list-point header a {
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#page-list-point header a svg {
+  margin-right: 16px;
+  color: var(--primary-color);
+}
+
+#page-list-point form {
+  margin: 80px auto;
+  padding: 64px;
+  max-width: 730px;
+  background: #FFF;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#page-list-point form h1 {
+  font-size: 36px;
+  margin: 0 auto;
+}
+
+#page-list-point .img-principal {
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+  outline: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  object-fit: cover;
+}
+
+#page-list-point form fieldset {
+  margin-top: 64px;
+  min-inline-size: auto;
+  border: 0;
+}
+
+#page-list-point form legend {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#page-list-point form legend h2 {
+  font-size: 24px;
+}
+
+#page-list-point form legend span {
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--text-color);
+}
+
+#page-list-point form .field-group {
+  flex: 1;
+  display: flex;
+}
+
+#page-list-point form .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.edit input{
+  width: 90%;
+}
+
+.edit-middle input {
+  width: 80%;
+}
+
+.icon-edit{
+  margin-left: 10px;
+}
+
+#page-list-point form .field input[type=text],
+#page-list-point form .field input[type=email],
+#page-list-point form .field input[type=number] {
+  flex: 1;
+  background: #FDF5E9;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #731601;
+}
+
+#page-list-point form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 1;
+  background: #FDF5E9;
+  border-radius: 8px;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  color: #701000;
+}
+
+#page-list-point form .field input::placeholder {
+  color: #701000;
+}
+
+#page-list-point form .field label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#page-list-point form .field :disabled {
+  cursor: not-allowed;
+}
+
+#page-list-point form .field-group .field + .field {
+  margin-left: 24px;
+}
+
+#page-list-point form .field-group input + input {
+  margin-left: 24px;
+}
+
+#page-list-point form .field-check {
+  flex-direction: row;
+  align-items: center;
+}
+
+#page-list-point form .field-check input[type=checkbox] {
+  background: #FDF5E9;
+}
+
+#page-list-point form .field-check label {
+  margin: 0 0 0 8px;
+}
+
+#page-list-point form .leaflet-container {
+  width: 100%;
+  height: 350px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+#page-list-point form .button-submit {
+  width: 260px;
+  height: 56px;
+  background: var(--primary-color);
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  align-self: flex-end;
+  margin-top: 40px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+#page-list-point form .button-submit:hover {
+  background: var(--hover);
+}

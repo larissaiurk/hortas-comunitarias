@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiEdit } from 'react-icons/fi';
 import axios from 'axios';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
@@ -79,7 +79,7 @@ const CreatePoints = () => {
   }, []);
 
   useEffect(() => {
-    axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados/').then(response => {
+    axios.get<IBGEUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome').then(response => {
       const ufInitials = response.data.map(uf => uf.sigla);
       setUfs(ufInitials);
     })
@@ -90,7 +90,7 @@ const CreatePoints = () => {
       return
     }
     axios
-      .get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios`)
+      .get<IBGECityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedUf}/municipios?orderBy=nome`)
       .then(response => {
         const cityNames = response.data.map(city => city.nome);
         setCities(cityNames);
@@ -172,10 +172,12 @@ const CreatePoints = () => {
       data.append('image', selectedFile);
     }
 
-    await api.post('points', data);
-    alert('Horta Cadastrada com Sucesso!!');
+    await api.post('points', data).then(response => {
+      const { id } = response.data;
+      alert('Horta Cadastrada com Sucesso!!');
+      history.push(`/point/${id}`)
+    });
 
-    history.push('/');
   }
 
   function getClassCategory(id: number) {
@@ -323,7 +325,7 @@ const CreatePoints = () => {
                 key={item.id} 
                 onClick={() => {handleSelectedCategories(item.id)}}
               >
-                <button className={getClassCategory(item.id)}>{item.title}</button>
+                <button type="button" className={getClassCategory(item.id)}>{item.title}</button>
               </li>
             ))}
           </ul>          

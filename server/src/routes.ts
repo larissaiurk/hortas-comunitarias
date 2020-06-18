@@ -44,5 +44,9 @@ routes.post(
   pointsController.create
 );
 
+routes.put('/points/:id', pointsController.update);
+
+routes.delete('/points/:id', pointsController.delete);
+
 
 export default routes;

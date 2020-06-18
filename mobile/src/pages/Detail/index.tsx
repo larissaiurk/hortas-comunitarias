@@ -48,12 +48,12 @@ const Detail = () => {
     }
   
     function handleWhatsapp() {
-      Linking.openURL(`whatsapp://send?phone=${dataResponse.serializedPoint.whatsapp}&text=Tenho interesse sobre coleta de resíduos`);
+      Linking.openURL(`whatsapp://send?phone=${dataResponse.serializedPoint.whatsapp}&text=Tenho interesse sobre os produtos da sua horta!`);
     }
   
     function handleComposeMail() {
       MailComposer.composeAsync({
-        subject: 'Interesse na coleta de resíduos',
+        subject: 'Interesse nos produtos da sua horta',
         recipients: [dataResponse.serializedPoint.email],
       })
     }
