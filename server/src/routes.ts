@@ -7,6 +7,7 @@ import multerConfig from './config/multer';
 
 import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/ItemsController';
+import ItemsPointController from './controllers/ItemsPointController';
 import CategoriesController from './controllers/CategoriesController';
 
 const routes = express.Router();
@@ -14,11 +15,15 @@ const upload = multer(multerConfig);
 
 const pointsController = new PointsController();
 const itemsController = new ItemsController();
+const itemsPointController = new ItemsPointController();
 const categoriesController = new CategoriesController();
 
 routes.get('/categories', categoriesController.index);
 
 routes.get('/items', itemsController.index);
+
+routes.get('/items-point/:id', itemsPointController.show);
+routes.put('/items-point/:id', itemsPointController.update);
 
 routes.get('/points/:id', pointsController.show);
 routes.get('/points/', pointsController.index);

@@ -118,15 +118,14 @@
 #point .grid .items-point li img {
   width: 65px;
   height: 65px;
-  position: relative;
-  top: -10px;
+  object-fit: contain;
 }
 
 #point .grid  .items-point li {
   background: #fdf5e9e3;
   border: 2px solid #fdfdfd;
   height: 140px;
-  width: 140px;
+  width: 130px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;

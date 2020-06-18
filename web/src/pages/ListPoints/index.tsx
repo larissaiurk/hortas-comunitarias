@@ -36,7 +36,6 @@ interface Point{
 
 const ListPoints = () => {
   const [point, setPoint] = useState<Point>();
-  const [items, setItems] = useState<Item[]>([]);
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0]);
 
   const [formData, setFormData] = useState({
@@ -45,10 +44,6 @@ const ListPoints = () => {
     email: '',
     whatsapp: '',
   });
-  
-  const [selectedFile, setSelectedFile] = useState<File>();
-
-  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   
   const history = useHistory();
 
@@ -67,13 +62,6 @@ const ListPoints = () => {
       setInitialPosition([latitude, longitude]);
     }
   }, [point])
-
-
-  useEffect(() => {
-    api.get('items').then(response => {
-      setItems(response.data);
-    })
-  }, []);
 
   function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
@@ -97,13 +85,6 @@ const ListPoints = () => {
     if(!whatsapp) {
       whatsapp = point ? String(point.whatsapp) : '';
     }            
-    // const items = selectedItems;
-    // const data = new FormData();
-    // data.append('items', items.join(','));
-    
-    // if(selectedFile) {
-    //   data.append('image', selectedFile);
-    // }
 
     await api.put(`points/${id}`, { name, responsibleName, email, whatsapp });
 
@@ -116,7 +97,7 @@ const ListPoints = () => {
     <div id="page-list-point">
       <header>
         <img src={Logo} alt="Hortas Comunitárias"/>
-        <Link to={`/point${id}`}> 
+        <Link to={`/point/${id}`}> 
           <FiArrowLeft></FiArrowLeft>
           Voltar para horta
         </Link>

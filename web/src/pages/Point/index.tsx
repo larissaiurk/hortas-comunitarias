@@ -37,7 +37,7 @@ const Point = () => {
   let { id } = useParams();
 
   const [point, setPoint] = useState<Point>();
-  console.log(point);
+
   useEffect(() => {
     api.get(`points/${id}`).then(response => {
       setPoint(response.data)
@@ -114,12 +114,10 @@ const Point = () => {
           </div>
 
           <div className="grid-item">
-            <h2>Produtos disponíveis</h2>
-            <button 
-                className="button button-delete" 
-                type="submit">
-                  Editar produtos
-            </button>            
+            <h2>Produtos disponíveis</h2>  
+            <Link className="button button-update" to={`/edit-items-point/${id}`}> 
+              Editar produtos
+            </Link>                        
             {
               point && point.serializedItems && (
                 <ul className="items-point">

@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import CommunityGardenList from './pages/CommunityGardenList';
 import Point from './pages/Point';
+import EditItemsPoint from './pages/EditItemsPoint';
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <Route component={Login} path="/login"/>
       <Route component={Register} path="/register"/>
       <Route component={Point} path="/point/:id"/>
+      <Route component={EditItemsPoint} path="/edit-items-point/:id"/>
       <Route component={CommunityGardenList} path="/garden-list"/>
     </BrowserRouter>
   )
