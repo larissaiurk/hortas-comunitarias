@@ -95,7 +95,7 @@ const Point = () => {
         <div className="grid">
           <div className="grid-item">        
             <h1>{point.serializedPoint.name}</h1>  
-            <img src={horta} alt="Horta"></img>
+            <img src={point.serializedPoint.image_url} alt="Horta"></img>
 
             <ul>
               <li>
