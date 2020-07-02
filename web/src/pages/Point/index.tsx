@@ -68,7 +68,7 @@ const Point = () => {
       
     if(confirmDelete) {
       try{
-        await api.delete(`points/3`);
+        await api.delete(`points/${id}`);
 
         alert('Horta deletada')
         history.push('/');
