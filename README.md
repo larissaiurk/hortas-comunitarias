@@ -20,7 +20,7 @@
   </a>  
 </p>
 <p align="center">
-<!-- <a href="https://insomnia.rest/run/?label=Ecoleta%20API&uri=https%3A%2F%2Fraw.githubusercontent.com%2Flarissaiurk%2Fhortas-comunitarias%2Fmaster%2Fserver%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a> -->
+<a href="https://insomnia.rest/run/?label=Hortas%20Comuni%C3%A1rias&uri=https%3A%2F%2Fgithub.com%2Flarissaiurk%2Frocketseat-next-level-week-1%2Fblob%2Fmaster%2Fserver%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
 <h1 align="center">PLATAFORMA VIRTUAL PARA HORTAS COMUNITÁRIAS EM CURITIBA</h1>
@@ -81,8 +81,6 @@ $ cp .env.example .env
 $ npm run dev
 
 ```
-
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Hortas%20Comuni%C3%A1rias&uri=https%3A%2F%2Fgithub.com%2Flarissaiurk%2Frocketseat-next-level-week-1%2Fblob%2Fmaster%2Fserver%2Finsomnia.json)
 
 ### Install Front-end
 
