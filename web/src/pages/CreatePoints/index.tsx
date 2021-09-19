@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft, FiEdit } from 'react-icons/fi';
+import { FiArrowLeft } from 'react-icons/fi';
 import axios from 'axios';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet';
@@ -174,7 +174,8 @@ const CreatePoints = () => {
 
     await api.post('points', data).then(response => {
       const { id } = response.data;
-      alert('Horta Cadastrada com Sucesso!!');
+      console.log(response, id);
+      // alert('Horta Cadastrada com Sucesso!!');
       history.push(`/point/${id}`)
     });
 
@@ -230,6 +231,7 @@ const CreatePoints = () => {
               name="name"
               id="name"
               onChange={handleInputChange}
+              data-cy="name"
             />
           </div>      
           <div className="field">
@@ -239,6 +241,7 @@ const CreatePoints = () => {
               name="responsibleName"
               id="responsibleName"
               onChange={handleInputChange}
+              data-cy="responsible"
             />
           </div>                
           <div className="field-group">
@@ -249,6 +252,8 @@ const CreatePoints = () => {
                 name="email"
                 id="email"
                 onChange={handleInputChange}
+                data-cy="email"
+
               />
             </div>         
 
@@ -259,6 +264,7 @@ const CreatePoints = () => {
                 name="whatsapp"
                 id="whatsapp"
                 onChange={handleInputChange}
+                data-cy="whatsapp"
               />
             </div> 
           </div>
@@ -337,6 +343,7 @@ const CreatePoints = () => {
                 key={item.id} 
                 onClick={() => handleSelectedItem(item.id)}
                 className={selectedItems.includes(item.id) ? 'selected' : ''}
+                data-cy={`product-cat-${item.id}`}
               >
                 <img src={item.image_url} alt={item.title}/>
                 <span>{item.title}</span>
@@ -347,6 +354,7 @@ const CreatePoints = () => {
                 key={item.id} 
                 onClick={() => handleSelectedItem(item.id)}
                 className={selectedItems.includes(item.id) ? 'selected' : ''}
+                data-cy={`product-${item.id}`}
               >
                 <img src={item.image_url} alt={item.title}/>
                 <span>{item.title}</span>
