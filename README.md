@@ -121,6 +121,23 @@ $ expo install expo-font @expo-google-fonts/ubuntu @expo-google-fonts/roboto
 
 ```
 
+### Install Tests with cypress
+
+```bash
+# Clonar o repo
+$ git clone https://github.com/larissaiurk/hortas-comunitarias
+
+# Entrar no repo
+$ cd hortas-comunitarias/test
+
+# Instalar dependências
+$ npm install
+
+# Rodar
+$ ./node_modules/.bin/cypress open
+
+```
+
 ## Próximos passos do projeto
 
 - [ ] Adicionar autenticação - criar cadastro de usuário
