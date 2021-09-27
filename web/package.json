@@ -20,7 +20,6 @@
     "react-icons": "^3.10.0",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
     "typescript": "^3.7.5"
   },
   "scripts": {
@@ -45,6 +44,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.5"
+    "@types/react-router-dom": "^5.1.5",
+    "react-scripts": "4.0.3"
   }
 }
