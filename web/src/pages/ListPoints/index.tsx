@@ -125,6 +125,7 @@ const ListPoints = () => {
                     id="name"
                     onChange={handleInputChange}
                     placeholder={point.name}
+                    data-cy="name"
                     />
                   <FiEdit className="icon-edit" size={20}></FiEdit>
                 </div>
@@ -234,7 +235,7 @@ const ListPoints = () => {
             </fieldset>   */}
 
 
-            <button className="button-submit" type="submit">Salvar dados da horta</button>              
+            <button data-cy="btn-edit-save" className="button-submit" type="submit">Salvar dados da horta</button>              
           </form>
         ) :
         (

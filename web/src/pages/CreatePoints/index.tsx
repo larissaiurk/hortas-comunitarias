@@ -217,7 +217,7 @@ const CreatePoints = () => {
       <form onSubmit={handleSubmit}>
         <h1>Cadastro da <br /> horta comunitária</h1>
 
-        <Dropzone onFileUploaded={setSelectedFile}></Dropzone>
+        <Dropzone data-cy="dropzone" onFileUploaded={setSelectedFile}></Dropzone>
 
         <fieldset>
           <legend>

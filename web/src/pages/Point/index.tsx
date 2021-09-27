@@ -119,11 +119,12 @@ const Point = () => {
               <button 
                 className="button button-delete" 
                 type="submit" 
+                data-cy="btn-remove"
                 onClick={handleDeletePoint}>
                   Excluir horta
               </button>    
 
-              <Link className="button button-update" to={`/list-point/${id}`}> 
+              <Link data-cy="btn-edit" className="button button-update" to={`/list-point/${id}`}> 
                 Editar dados da horta
               </Link>          
             </div>
@@ -133,7 +134,7 @@ const Point = () => {
 
           <div className="grid-item">
             <h2>Produtos disponíveis</h2>  
-            <Link className="button button-update" to={`/edit-items-point/${id}`}> 
+            <Link data-cy="btn-edit-products" className="button button-update" to={`/edit-items-point/${id}`}> 
               Editar produtos
             </Link>                        
             {

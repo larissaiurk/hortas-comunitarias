@@ -158,6 +158,7 @@ const EditItemsPoint = () => {
                 key={item.id} 
                 onClick={() => handleSelectedItem(item.id)}
                 className={selectedItems.includes(item.id) ? 'selected' : ''}
+                data-cy={`product-cat-${item.id}`}
               >
                 <img src={item.image_url} alt={item.title}/>
                 <span>{item.title}</span>
@@ -168,6 +169,7 @@ const EditItemsPoint = () => {
                 key={item.id} 
                 onClick={() => handleSelectedItem(item.id)}
                 className={selectedItems.includes(item.id) ? 'selected' : ''}
+                data-cy={`product-${item.id}`}
               >
                 <img src={item.image_url} alt={item.title}/>
                 <span>{item.title}</span>
@@ -177,7 +179,7 @@ const EditItemsPoint = () => {
           </ul>
         </fieldset>  
 
-        <button className="button-submit" type="submit">Atualizar itens</button>              
+        <button data-cy="btn-edit-products-save" className="button-submit" type="submit">Atualizar itens</button>              
       </form>
     </div>
   );
